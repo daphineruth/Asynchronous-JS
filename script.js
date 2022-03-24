@@ -10,5 +10,10 @@ const countriesContainer = document.querySelector('.countries');
  request.send();
 
 request.addEventListener('load', function(){
-    console.log(this.responseText);
+    //returns JSON data
+    //console.log(this.responseText);
+
+    const data = JSON.parse(this.responseText);
+    console.log(data);
 })
+
