@@ -68,6 +68,8 @@ const getCountryAndNeighbour = function (country) {
     });
   });
 };
+getCountryData('kenya');
+
 
 
 
