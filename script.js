@@ -82,7 +82,7 @@ setTimeout(() => {
   }, 1000);
 }, 1000);
  //consuming promises
-const getCountryData = function (country) {
+ /*const getCountryData = function (country) {
    fetch(`https://restcountries.eu/rest/v2/name/${country}`)
       .then(function (response) {
         console.log(response);
@@ -93,6 +93,15 @@ const getCountryData = function (country) {
         renderCountry(data[0]);
        });
       };
+      */
+      const getCountryData = function (country) {
+        
+           fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+             .then(response => {
+               console.log(response);
+             });
+            }
+        
 
 
 
