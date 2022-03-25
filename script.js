@@ -95,7 +95,7 @@ setTimeout(() => {
       };
       */
       const getCountryData = function (country) {
-        
+        //country 1
            fetch(`https://restcountries.eu/rest/v2/name/${country}`)
              .then(response => {
                console.log(response);
@@ -112,6 +112,10 @@ setTimeout(() => {
                    const neighbour = 'dfsdfdef';
             
                  if (!neighbour) return;
+
+                 //country 2
+
+                 return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
 
                 });
               }
