@@ -118,9 +118,16 @@ setTimeout(() => {
                  return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
 
                 });
-              }
+                then(response => {
+                         if (!response.ok)
+                           throw new Error(`Country not found (${response.status})`);
+                  
+                         return response.json();
+              })
+            } 
+            
         
 
 
 
-
+            
