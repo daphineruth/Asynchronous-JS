@@ -135,6 +135,12 @@ setTimeout(() => {
 
             } 
             
+            btn.addEventListener('click', function () {
+              getCountryData('portugal');
+            });
+
+            
+            
         
 
 
