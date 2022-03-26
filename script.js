@@ -124,6 +124,15 @@ setTimeout(() => {
                   
                          return response.json();
               })
+              .then(data => renderCountry(data, 'neighbour'))
+     .catch(err => {
+       console.error(`${err} `);
+       renderError(`Something went wrong ${err.message}. Try again!`);
+     })
+     .finally(() => {
+       countriesContainer.style.opacity = 1;
+     });
+
             } 
             
         
