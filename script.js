@@ -159,7 +159,7 @@ setTimeout(() => {
 
             //Building a simple promise
 
-            const lotteryPrice = new Promise( function(resolve,reject){
+            const lotteryPromise = new Promise( function(resolve,reject){
               if (Math.random() >= 0.5){
                 resolve('You won')
               }
@@ -168,6 +168,10 @@ setTimeout(() => {
               }
               
             });
+
+            //consuming the promise
+
+            lotteryPromise.then(res => console.log(res)).catch (err => console.log(err));
 
             
             
