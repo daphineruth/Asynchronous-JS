@@ -157,22 +157,28 @@ setTimeout(() => {
               getCountryData('kenya');
             });
 
+
+
+
             //Building a simple promise
 
             const lotteryPromise = new Promise( function(resolve,reject){
+
+              setTimeout(function() {
               if (Math.random() >= 0.5){
                 resolve('You won')
               }
               else{
                 reject('You lost');
               }
+            },3000)
               
             });
 
             //consuming the promise
 
             lotteryPromise.then(res => console.log(res)).catch (err => console.log(err));
-
+        
             
             
         
