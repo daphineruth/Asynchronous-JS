@@ -193,7 +193,7 @@ setTimeout(() => {
               return wait(1);
             })
             .then(() =>console.log('waited for one second') );
-        */
+        
 
             //promisifying geolocation API
 
@@ -208,7 +208,26 @@ setTimeout(() => {
                 );
             });
           }
+          */
+
+          const getPosition = function () {
+            return new Promise(function (resolve, reject) {
+              navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+          };
+
+          const whereAmI = async function () {
           
+              const pos = await getPosition();
+              const { latitude: lat, longitude: lng } = pos.coords;
+          
+              const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+              
+              const dataGeo = await resGeo.json();
+              console.log(dataGeo);
+          }
+          
+              
             
             
         
