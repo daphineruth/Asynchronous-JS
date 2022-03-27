@@ -178,6 +178,18 @@ setTimeout(() => {
             //consuming the promise
 
             lotteryPromise.then(res => console.log(res)).catch (err => console.log(err));
+
+            //promisifying setTimeout
+            const wait =function(seconds) {
+              return new Promise(function(resolve){
+                setTimeout(resolve, seconds + 1000);
+              })
+            };
+            wait(2).then(() => {
+              console.log("waited for 2seconds");
+              return wait(1);
+            })
+            .then(() =>console.log('waited for one second') );
         
             
             
