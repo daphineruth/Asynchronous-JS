@@ -56,7 +56,7 @@ request.addEventListener('load', function(){
 getCountryData('kenya');
 
 */
-const getCountryAndNeighbour = function (country) {
+/*const getCountryAndNeighbour = function (country) {
   // AJAX call country 1
   const request = new XMLHttpRequest();
   request.open('GET', `https://restcountries.com/v3.1/name/${country}`) ;
@@ -143,7 +143,7 @@ setTimeout(() => {
                          return response.json();
               })
               .then(data => renderCountry(data, 'neighbour'))
-     .catch(err => {
+       .catch(err => {
        console.error(`${err} `);
        renderError(`Something went wrong ${err.message}. Try again!`);
      })
@@ -154,7 +154,19 @@ setTimeout(() => {
             } 
             
             btn.addEventListener('click', function () {
-              getCountryData('portugal');
+              getCountryData('kenya');
+            });
+
+            //Building a simple promise
+
+            const lotteryPrice = new Promise( function(resolve,reject){
+              if (Math.random() >= 0.5){
+                resolve('You won')
+              }
+              else{
+                reject('You lost');
+              }
+              
             });
 
             
