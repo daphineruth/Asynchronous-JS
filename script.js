@@ -1,5 +1,5 @@
 'use strict';
-/*
+
 
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
@@ -114,7 +114,7 @@ setTimeout(() => {
       };
       */
 
-      /*
+      
       const getCountryData = function (country) {
         //country 1
            fetch(`https://restcountries.eu/rest/v2/name/${country}`)
@@ -196,7 +196,7 @@ setTimeout(() => {
         
 
             //promisifying geolocation API
-
+/* 
             
             const getPosition =function() {
               return new Promise(function (resolve, reject) {
@@ -208,7 +208,7 @@ setTimeout(() => {
                 );
             });
           }
-          */
+          
 
           const getPosition = function () {
             return new Promise(function (resolve, reject) {
@@ -233,5 +233,5 @@ setTimeout(() => {
         
 
 
-
-            
+*/
+        
