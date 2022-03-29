@@ -264,7 +264,7 @@ setTimeout(() => {
                   getJSON(`https://restcountries.com/v3.1name/${c2}`),
                   getJSON(`https://restcountries.com/v3.1name/${c3}`),
                 ]);
-          
+                console.log(data.map(d => d[0].capital));
             }
             catch (err) {
               console.error(err);}
