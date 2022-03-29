@@ -269,3 +269,5 @@ setTimeout(() => {
             catch (err) {
               console.error(err);}
             }
+
+            get3Countries('Kenya', 'Uganda', 'Tanzania');
