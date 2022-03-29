@@ -259,7 +259,11 @@ setTimeout(() => {
                 `https://restcountries.com/v3.1/name/${c3}`
                 );
 
-          
+                const data = await Promise.all([
+                  getJSON(`https://restcountries.com/v3.1name/${c1}`),
+                  getJSON(`https://restcountries.com/v3.1name/${c2}`),
+                  getJSON(`https://restcountries.com/v3.1name/${c3}`),
+                ]);
           
             }
             catch (err) {
