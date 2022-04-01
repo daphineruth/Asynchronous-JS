@@ -294,8 +294,8 @@ setTimeout(() => {
           //Running promises in parallel
           
           const get3Countries = async function (c1, c2, c3) {
-            try {
-               /* const [data1] = await getJSON(
+           /* try {
+                const [data1] = await getJSON(
                 `https://restcountries.com/v3.1/name/${c1}`
                );
 
@@ -308,16 +308,21 @@ setTimeout(() => {
                 );
                 */
 
-                const data = await Promise.race([
+                const res = await Promise.race([
                   getJSON(`https://restcountries.com/v3.1name/${kenya}`),
                   getJSON(`https://restcountries.com/v3.1name/${uganda}`),
                   getJSON(`https://restcountries.com/v3.1name/${tanzania}`),
                 ]);
-                console.log(data.map(d => d[0].capital));
-            }
-            catch (err) {
-              console.error(err);}
-            }
+                console.log(res[0]);
+              
 
-          
+              const setTimeout = function (sec) {
+
+                return new promise (function (_, reject){
+                  setTimeout()
+                    reject(new Error("Request took too long"));
+                  }, sec);
+              
+                }
           }
+              }
