@@ -5,7 +5,7 @@ const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
 
-const renderCountry = function (data, className = '') {
+const renderCountry = function (data, _className = '') {
   const html = `<article class="country">
   <img class="country__img" src="${data.flags}" />
   <div class="country__data">
@@ -20,6 +20,18 @@ const renderCountry = function (data, className = '') {
   `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
+};
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  countriesContainer.style.opacity = 1;
+};
+
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+
+    return response.json();
+  });
 };
 
 /*
@@ -138,8 +150,8 @@ setTimeout(() => {
               })
                 .then(data => {
                 renderCountry(data[0]);
-                 // const neighbour = data[0].borders[0];
-                   const neighbour = 'dfsdfdef';
+                  const neighbour = data[0].borders[0];
+                  // const neighbour = '';
             
                  if (!neighbour) return;
 
@@ -165,7 +177,8 @@ setTimeout(() => {
 
             } 
             
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', function ()
+            {
               getCountryData('kenya');
             });
 
@@ -252,10 +265,14 @@ setTimeout(() => {
               renderError(`${err.message}`);
           
               // Reject promise returned from async function
-             // throw err;
+             throw err;
             }
           };
-          whereAmI().then(city =>console.log(city));
+          whereAmI()
+          .then(city =>console.log(city))
+          .catch(err => console.log(`${errorMsg})`)
+          .finally(() => console.log('Finished getting location'));
+
 
 
           //Running promises in parallel
