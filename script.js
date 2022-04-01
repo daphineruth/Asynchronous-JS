@@ -308,10 +308,10 @@ setTimeout(() => {
                 );
                 */
 
-                const data = await Promise.all([
-                  getJSON(`https://restcountries.com/v3.1name/${c1}`),
-                  getJSON(`https://restcountries.com/v3.1name/${c2}`),
-                  getJSON(`https://restcountries.com/v3.1name/${c3}`),
+                const data = await Promise.race([
+                  getJSON(`https://restcountries.com/v3.1name/${kenya}`),
+                  getJSON(`https://restcountries.com/v3.1name/${uganda}`),
+                  getJSON(`https://restcountries.com/v3.1name/${tanzania}`),
                 ]);
                 console.log(data.map(d => d[0].capital));
             }
@@ -319,5 +319,5 @@ setTimeout(() => {
               console.error(err);}
             }
 
-            get3Countries('Kenya', 'Uganda', 'Tanzania');
+          
           }
