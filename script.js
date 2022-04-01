@@ -270,8 +270,9 @@ setTimeout(() => {
           };
           whereAmI()
           .then(city =>console.log(city))
-          .catch(err => console.log(`${errorMsg})`)
-          .finally(() => console.log('Finished getting location'));
+          .catch(err => console.log(`${errorMsg}`))
+          .finally(() => console.log('Finished getting location'))
+          ;
 
 
 
