@@ -113,8 +113,11 @@ setTimeout(() => {
        });
       };
       */
-     const res = await fetch (
+     const res = function(country){
+     fetch (
         `https://restcountries.com/v3.1/name/${country}`) ;
+        
+
   
       
       
@@ -123,7 +126,7 @@ setTimeout(() => {
       
       const getCountryData = function (country) {
         //country 1
-           fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+           fetch(`https://restcountries.com/v3.1/name/${country}`)
              .then(response => {
                console.log(response);
              
@@ -249,7 +252,7 @@ setTimeout(() => {
               renderError(`${err.message}`);
           
               // Reject promise returned from async function
-              throw err;
+             // throw err;
             }
           };
           whereAmI().then(city =>console.log(city));
@@ -282,3 +285,4 @@ setTimeout(() => {
             }
 
             get3Countries('Kenya', 'Uganda', 'Tanzania');
+          }
