@@ -230,6 +230,7 @@ setTimeout(() => {
           
             
               const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+
               if (!resGeo.ok) throw new Error('Problem getting location data');
               const dataGeo = await resGeo.json();
           
@@ -240,7 +241,8 @@ setTimeout(() => {
               if (!resGeo.ok) throw new Error('Problem getting country');
               const data = await res.json();
               renderCountry(data[0]);
-          
+              
+          //returning values from async function
               return `You are in ${dataGeo.city}, ${dataGeo.country}`;
             } catch (err) {
               console.error(`${err} `);
@@ -250,6 +252,8 @@ setTimeout(() => {
               throw err;
             }
           };
+
+
           //Running promises in parallel
 
           const get3Countries = async function (c1, c2, c3) {
