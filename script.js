@@ -268,11 +268,26 @@ setTimeout(() => {
              throw err;
             }
           };
+          /*
           whereAmI()
-          .then(city =>console.log(city))
+          .then(city =>console.log(`${city}`))
           .catch(err => console.log(`${errorMsg}`))
           .finally(() => console.log('Finished getting location'))
           ;
+          */ 
+
+          (async function(){
+
+            try{
+              const data = await whereAmI();
+              console.log(`${city}`)
+            }
+            catch (err){
+              console.log(`${errorMsg}`)
+            }
+            console.log('Finished getting location');
+          
+          })
 
 
 
