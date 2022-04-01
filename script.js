@@ -334,9 +334,10 @@ setTimeout(() => {
               //timeout(59),
               //])
 
-              //.then(res => console.log(res[0]))
-              //.catch(err => console.log(errorMsg));
-              
+              //.then(res=> console.log(res[0]))
+             // .catch(err => console.log(errorMsg))
+          
+
 
               //promise.allsettled
 
@@ -347,5 +348,19 @@ setTimeout(() => {
 
 
               ])
+
+              //promise.all
+              promise.all([
+                promise.resolve('success'),
+                promise.reject('error'),
+                promise.resolve('Another success')
+
+
+              ])
+              .then(res=> console.log(res[0]))
+             .catch(err => console.log(errorMsg))
+          
+     
+
      
 
