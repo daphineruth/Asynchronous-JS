@@ -113,6 +113,12 @@ setTimeout(() => {
        });
       };
       */
+     const res = await fetch (
+        `https://restcountries.com/v3.1/name/${country}`) ;
+  
+      
+      
+      
 
       
       const getCountryData = function (country) {
@@ -165,7 +171,7 @@ setTimeout(() => {
 
             //Building a simple promise
 
-            const lotteryPromise = new Promise( function(resolve,reject){
+            const lotteryPromise = new Promise( function(resolve, reject) {
 
               setTimeout(function() {
               if (Math.random() >= 0.5){
