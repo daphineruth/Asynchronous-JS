@@ -241,7 +241,7 @@ setTimeout(() => {
               if (!resGeo.ok) throw new Error('Problem getting country');
               const data = await res.json();
               renderCountry(data[0]);
-              
+
           //returning values from async function
               return `You are in ${dataGeo.city}, ${dataGeo.country}`;
             } catch (err) {
@@ -252,6 +252,7 @@ setTimeout(() => {
               throw err;
             }
           };
+          whereAmI().then(city =>console.log(city));
 
 
           //Running promises in parallel
